@@ -1,27 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/Page.css';
-import {Nav, Navbar} from 'react-bootstrap';
+import Menu from './Menu';
 import imagem from './img/worka.jpg';
+import Footer from './Footer';
+import './css/Page.css';
 function Page() {
+  window.scrollTo(0,0);
   return (
     
     <>
-       <Navbar className="amarelo-bg fixed-top" expand="lg">
-        <Navbar.Brand href="#home"></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
+      <Menu text="Artigo"/>
       <body>
       <div className="tudo-page">
         <div className="titulo">
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
+            <h1>Workaholic e Escritórios Colorido</h1>
         </div>
         <div className="imagem-page">
           <img src={imagem} alt="asdasdds"/>
@@ -42,9 +34,7 @@ function Page() {
 
         </div>
       </div>
-      <div className="footer roboto-slab">
-          <span>Copyright © ademario.com.br</span>
-      </div>
+      <Footer/>
       </body>
    </> 
 
