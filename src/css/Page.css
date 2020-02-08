@@ -1,0 +1,85 @@
+
+
+.titulo{
+
+    height: auto;
+    padding-bottom: 12px;
+    background:  #FFFF00;
+    
+}
+.titulo h1{
+    padding-top: 50px;
+    width: 90%;
+    margin-left: 5%;
+    color: #010101;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+}
+.imagem-page img{
+    width: 100%;
+}
+.roboto-slab{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+}
+.nome{
+    color: #FFFF00;
+    margin-top: 14px;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+}
+.data{
+    color: white;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 21px;
+}
+.centralizado-90{
+    width: 90%;
+    margin-left: 5%;
+}
+.artigo{
+    margin-top: 20px;
+    color: white;
+}
+.marcador{
+    background: linear-gradient(130deg, #FFFF00 70%, black 70%);
+    width: 65px;
+    height: 11px;
+    margin-top: 15px;
+    padding: 0px;
+    float: left;
+
+}
+.artigo strong{
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+    margin: 0px;
+   
+}
+.artigo p{
+    display: block;
+}
+.texto-inicial{
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 25px;
+}
+.footer{
+    width: 100%;
+    height: 89px;
+    background-color: #FFFF00;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
