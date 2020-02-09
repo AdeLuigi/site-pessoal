@@ -1,57 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import api from './services/api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
-import imagem from './img/worka.jpg';
 import Menu from './Menu';
 import {Link} from 'react-router-dom';
 import Footer from './Footer';
 
 function App() {
+  const [artigos, setArtigos] = useState([]);
+
+  useEffect(() => {
+      async function carregaArtigos() {
+          const response = await api.get('/');
+         setArtigos(response.data);
+      }
+      carregaArtigos();
+  }, []);
+
+ 
+
   return (
     <>
       <Menu text="Home"/>
       <body>
       <div className="tudo">
-      <Link to="/page">
-          <div className="bloco_principal primeiro">
-            <img src={imagem} alt="asdasdds"/>
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
-            <p className="amarelo-color">Ademario Vitor - 7 de Fevereiro</p>
-            <p className="texto-resumo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text eve'-r since t</p>
-          </div>
-      </Link>    
-        <Link>
-          <div className="bloco_principal">
-            <img src={imagem} alt="asdasdds"/>
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
-            <p className="amarelo-color">Ademario Vitor - 7 de Fevereiro</p>
-            <p className="texto-resumo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since t</p>
-          </div>
-        </Link>
-        <Link>
-          <div className="bloco_principal">
-            <img src={imagem} alt="asdasdds"/>
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
-            <p className="amarelo-color">Ademario Vitor - 7 de Fevereiro</p>
-            <p className="texto-resumo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since t</p>
-          </div>
-        </Link>
-        <Link>
-          <div className="bloco_principal">
-            <img src={imagem} alt="asdasdds"/>
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
-            <p className="amarelo-color">Ademario Vitor - 7 de Fevereiro</p>
-            <p className="texto-resumo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since t</p>
-          </div>
-        </Link>
-        <Link>
-          <div className="bloco_principal">
-            <img src={imagem} alt="asdasdds"/>
-            <h1>Titulo da materia explicando um pouco sobre o rolê e as coisas que tão acontecendo</h1>
-            <p className="amarelo-color">Ademario Vitor - 7 de Fevereiro</p>
-            <p className="texto-resumo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since t</p>
-          </div>
-        </Link>
+          {artigos.map(artigo =>(
+            
+            <Link to={"/page/"+artigo._id} text={artigo._id}>
+              <div key={artigo._id} className="bloco_principal primeiro">
+                <img src={artigo.imagem} alt="asdasdds"/>
+                <h1>{artigo.titulo}</h1>
+                <p className="amarelo-color">{artigo.nome}</p>
+                <p className="texto-resumo">{artigo.texto}t</p>
+              </div>
+          </Link>  
+          ))}
+
       </div>
       <Footer/>
       </body>
