@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import api from './services/api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './Menu';
-import imagem from './img/worka.jpg';
 import Footer from './Footer';
 import './css/Page.css';
 function Page(props) {

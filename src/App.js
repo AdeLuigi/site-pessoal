@@ -9,6 +9,7 @@ import Footer from './Footer';
 function App() {
   const [artigos, setArtigos] = useState([]);
 
+
   useEffect(() => {
       async function carregaArtigos() {
           const response = await api.get('/');
@@ -17,12 +18,15 @@ function App() {
       carregaArtigos();
   }, []);
 
- 
+
 
   return (
     <>
       <Menu text="Home"/>
       <body>
+      {
+
+      }
       <div className="tudo">
           {artigos.map(artigo =>(
             
